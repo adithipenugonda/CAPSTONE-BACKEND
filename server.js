@@ -15,7 +15,7 @@ const app = exp()
 //add bodyparser middleware
 app.use(exp.json())
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: ['http://localhost:5173', 'https://capstone-frontend-theta-nine.vercel.app'],
     credentials: true
 }))
 //add cookieparser middleware
