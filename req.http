@@ -1,0 +1,100 @@
+### User Register
+POST http://localhost:4000/user-api/users
+content-Type : application/json
+
+{
+    "firstName" : "Adithi",
+    "lastName" : "penugonda",
+    "email" : "adithii@gmail.com",
+    "password" : "adithi123",
+    "profileImageUrl" : "https://example.com/avatars/user.png"
+}
+
+### User Login
+POST http://localhost:4000/common-api/authenticate
+Content-Type: application/json
+
+{
+    "email" : "adithii@gmail.com",
+    "password" : "adithi123"
+}
+
+
+### Author Register
+POST http://localhost:4000/author-api/users
+content-Type : application/json
+
+{
+    "firstName" : "Shanmukh",
+    "lastName" : "sai",
+    "email" : "shanmukhh@gmail.com",
+    "password" : "shanmukh123",
+    "profileImageUrl" : "https://example.com/avatars/author.png"
+}
+
+### Author Login
+POST http://localhost:4000/common-api/authenticate
+Content-Type: application/json
+
+{
+    "email" : "shanmukh@gmail.com",
+    "password" : "shanmukh123"
+ 
+}
+
+
+
+### Create article 
+POST http://localhost:4000/author-api/articles
+Content-Type: application/json
+
+{
+    "author" : "6989affda90e61dfb9e1f496",
+    "title" : "My Life",
+    "category" : "Life",
+    "content" : "content of My Life article"
+}
+
+
+### read article
+GET http://localhost:4000/author-api/articles/6989affda90e61dfb9e1f496
+
+
+
+
+### update article 
+PUT  http://localhost:4000/author-api/articles/6989b19de69c88e7b0aeab2d
+Content-Type: application/json
+
+{
+    "author" : "6989affda90e61dfb9e1f496",
+    "title" : "My Lifee",
+    "category" : "Life",
+    "content" : "content of My Life article"
+}
+
+### Delete article
+PATCH http://localhost:4000/author-api/articles/6989757e2faeac5dc1d85442
+
+
+### logout
+POST http://localhost:4000/logout
+
+
+
+### Test req
+GET http://localhost:4000/test
+
+
+
+
+### Block user
+PUT http://localhost:4000/admin-api/block-user/698ac9138e8d36ff9da5633a
+
+
+### Unblock user
+PUT http://localhost:4000/admin-api/unblock-user/698ac9138e8d36ff9da5633a
+
+
+
+
