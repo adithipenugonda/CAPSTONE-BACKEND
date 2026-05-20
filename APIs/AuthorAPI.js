@@ -66,6 +66,7 @@ authorRoute.post('/articles', verifyToken, async (req, res, next) => {
             isArticleActive: true
         })
         const savedArticle = await newArticle.save()
+        console.log(`[SYSTEM LOG] Article published by user ${req.user.userId} at: ${new Date(savedArticle.createdAt).toLocaleString()}`)
         res.status(201).json({message: "article created",payload: savedArticle})
     } catch (err) {
         next(err)
@@ -118,6 +119,7 @@ authorRoute.put('/articles/:articleId', verifyToken, async (req, res, next) => {
             },
             { new: true }
         ).populate("author").populate("comments.user")
+        console.log(`[SYSTEM LOG] Article with ID ${articleId} updated by user ${req.user.userId} at: ${new Date(updatedArticle.updatedAt).toLocaleString()}`)
         //send response
         res.status(200).json({message: "article updated",payload: updatedArticle})
     } catch (err) {
